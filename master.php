@@ -30,7 +30,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+                <li class="active"><a href="home.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
                 <li><a href="aboutus.php"><span class="glyphicon glyphicon-exclamation-sign"></span> About Us</a></li>
                 <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
             </ul>
@@ -42,7 +42,7 @@
             if( isset($_SESSION['username']))
             {
                 echo '<li><a href="profile.php"><span class="glyphicon glyphicon-briefcase"></span> Profile</a></li>';
-                echo '<li><a href="index.php?Logout=1"><span class="glyphicon glyphicon-off"></span> Logout</a></li>';
+                echo '<li><a href="home.php?Logout=1"><span class="glyphicon glyphicon-off"></span> Logout</a></li>';
             }
             else
             {
