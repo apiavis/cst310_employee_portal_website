@@ -32,6 +32,16 @@
                     <input type="password" class="form-control" id="inputPassword4" placeholder="Password" autocomplete="off">
                 </div>
             </div>
+            <div class="form-row">
+                <div class="form-group col-md-6" id="no-padding-left">
+                    <label for="inputFirstName4">First Name</label>
+                    <input type="firstName" class="form-control" id="inputFirstName4" placeholder="First Name" autocomplete="off">
+                </div>
+                <div class="form-group col-md-6" id="no-padding-right">
+                    <label for="inputLastName4">Last Name</label>
+                    <input type="lastName" class="form-control" id="inputLastName4" placeholder="Last Name" autocomplete="off">
+                </div>
+            </div>
             <div class="form-group">
                 <label for="inputAddress">Address</label>
                 <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
@@ -57,12 +67,18 @@
                     <input type="text" class="form-control" id="inputZip">
                 </div>
             </div>
-            <div class="form-group">
-                <div class="form-check">
-                <input class="form-check-input" type="checkbox" id="gridCheck">
-                <label class="form-check-label" for="gridCheck">
-                    Check me out
-                </label>
+            <div class="form-row">
+                <div class="form-group col-md-6" id="no-padding-left">
+                    <label for="inputPhone">Phone</label>
+                    <input type="text" class="form-control" id="inputPhone">
+                </div>
+                <div class="form-group col-md-3">
+                    <label for="inputSalary">Salary</label>
+                    <input type="text" class="form-control" id="inputSalary">
+                </div>
+                <div class="form-group col-md-3" id="no-padding-right">
+                    <label for="inputSSN">SSN</label>
+                    <input type="text" class="form-control" id="inputSSN">
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Sign in</button>
