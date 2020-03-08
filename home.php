@@ -1,5 +1,9 @@
 <?php
     error_reporting(E_ALL ^ E_NOTICE);
+    require_once('Connect.php');
+    $sqlStatement = "CREATE TABLE `employee_portal_website`.`tblUser` ( `id` INT(10) NOT NULL AUTO_INCREMENT , `email` VARCHAR(50) NULL , `password` VARCHAR(20) NOT NULL , `firstName` VARCHAR(50) NULL , `lastName` VARCHAR(50) NOT NULL , `address` VARCHAR(250) NULL DEFAULT NULL , `phone` VARCHAR(13) NULL DEFAULT NULL , `salary` INT(10) NULL DEFAULT NULL , `SSN` INT(9) NULL DEFAULT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
+    $newConnection = new Connect();
+    $newConnection->executeQuery($newConnection->connection,$sqlStatement);
 ?>
 <!DOCTYPE html>
 <html lang="en">
