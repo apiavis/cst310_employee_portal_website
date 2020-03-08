@@ -1,5 +1,6 @@
 <?php
     error_reporting(E_ALL ^ E_NOTICE);
+    require_once('Connect.php');
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -87,7 +88,7 @@
                     <input type="text" class="form-control" id="inputSSN" placeholder="111223333" name="SSN" required>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Sign in</button>
+            <button type="submit" class="btn btn-primary">Register</button>
             <?php 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $email = test_input($_POST["email"]);
@@ -103,22 +104,18 @@
                     $salary = test_input($_POST["salary"]);
                     $SSN = test_input($_POST["SSN"]);
                     $address = $address1." ".$address2." ".$city." ".$state." ".$zip;
-                  }
+                }
                   
-                  function test_input($data) {
+                function test_input($data) {
                     $data = trim($data);
                     $data = stripslashes($data);
                     $data = htmlspecialchars($data);
                     return $data;
-                  }
-                // echo $email;
-                // echo $password;
-                // echo $firstName;
-                // echo $lastName;
-                // echo $address;
-                // echo $phone;
-                // echo $salary;
-                // echo $SSN;
+                }
+                $newConnection = new Connect();
+                $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
+                    VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$SSN')";
+                $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
             ?>
         </form>
     </div>
