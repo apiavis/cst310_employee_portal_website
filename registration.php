@@ -112,10 +112,11 @@
                     $data = htmlspecialchars($data);
                     return $data;
                 }
-                $newConnection = new Connect();
+
                 $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
                     VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$SSN')";
                 $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
+                
             ?>
         </form>
     </div>
