@@ -37,11 +37,10 @@
             ini_set('session.use_only_cookies','1');
             session_start();
 
-            // unset($_SESSION['username']);
             if( isset($_SESSION['username']))
             {
                 echo '<li><a href="profile.php"><span class="glyphicon glyphicon-briefcase"></span> Profile</a></li>';
-                echo '<li><a href="home.php?Logout=1"><span class="glyphicon glyphicon-off"></span> Logout</a></li>';
+                echo '<li><a href="logout.php"><span class="glyphicon glyphicon-off"></span> Logout</a></li>';
             }
             else
             {
