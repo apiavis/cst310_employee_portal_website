@@ -113,9 +113,11 @@
                     return $data;
                 }
 
-                $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
+                if ($_POST != array()) {
+                    $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
                     VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$SSN')";
-                $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
+                    $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
+                }
                 
             ?>
         </form>

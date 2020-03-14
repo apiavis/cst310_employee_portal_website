@@ -31,8 +31,7 @@
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
                 <li class="active"><a href="home.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-                <li><a href="aboutus.php"><span class="glyphicon glyphicon-exclamation-sign"></span> About Us</a></li>
-                <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span> Contact Us</a></li>
+                <li><a href="contactus.php"><span class="glyphicon glyphicon-earphone"></span> Profile</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-right">
         <?php
