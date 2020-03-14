@@ -20,7 +20,6 @@
     <div class="container text-center">
         <h1>Welcome to the Registration Page</h1>
     </div>
-    <
     <div class="container">
         <form class="padding-top" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
             <div class="form-row">
