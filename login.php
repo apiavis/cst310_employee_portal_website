@@ -47,6 +47,8 @@
                     return $data;
                 }
 
+                // $_SESSION['username'] = "Alicia"
+                
                 echo $email;
                 echo $password;
 
