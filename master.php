@@ -37,6 +37,7 @@
             ini_set('session.use_only_cookies','1');
             session_start();
 
+            // unset($_SESSION['username']);
             if( isset($_SESSION['username']))
             {
                 echo '<li><a href="profile.php"><span class="glyphicon glyphicon-briefcase"></span> Profile</a></li>';
