@@ -87,7 +87,7 @@
                     <input type="text" class="form-control" id="inputSSN" placeholder="111223333" name="SSN" required>
                 </div>
             </div>
-            <button type="submit" class="btn btn-primary">Register</button>
+            <button type="submit" class="btn btn-primary" name="register_user">Register</button>
             <?php 
                 if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     $email = test_input($_POST["email"]);
@@ -116,6 +116,18 @@
                     $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
                     VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$SSN')";
                     $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
+                }
+
+                $loginQuery = "SELECT * FROM tbluser WHERE email= '$email' AND password='$password'"; 
+                if(isset($_POST['register_user'])) {
+                    $results = mysqli_query($newConnection->connection, $loginQuery); 
+                    if (mysqli_num_rows($results) == 1) { 
+                        while($row = mysqli_fetch_assoc($results)) {
+                            $_SESSION['username'] = $row['firstName'];
+                        }
+                         
+                        header('location: home.php'); 
+                    } 
                 }
                 
             ?>
