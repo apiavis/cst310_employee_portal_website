@@ -126,7 +126,7 @@
                             $_SESSION['username'] = $row['firstName'];
                         }
                          
-                        header('location: home.php'); 
+                        echo "<h2>Thank you for registering.</h2>";
                     } 
                 }
                 
