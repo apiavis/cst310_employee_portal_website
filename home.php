@@ -25,6 +25,7 @@
             }
             else {
                 echo "<h1>Welcome to the Home Page</h1>";
+                echo "<h3>Please login or register</h3>";
             }
         ?>
     </div>

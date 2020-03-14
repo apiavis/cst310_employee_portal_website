@@ -51,15 +51,14 @@
                 $loginQuery = "SELECT * FROM tbluser WHERE email= '$email' AND password='$password'"; 
                 if(isset($_POST['login_user'])) {
                     $results = mysqli_query($newConnection->connection, $loginQuery); 
+                    if (mysqli_num_rows($results) == 1) { 
+                        while($row = mysqli_fetch_assoc($results)) {
+                            $_SESSION['username'] = $row['firstName'];
+                        }
+                         
+                        header('location: home.php'); 
+                    } 
                 }
-
-                if (mysqli_num_rows($results) == 1) { 
-                    while($row = mysqli_fetch_assoc($results)) {
-                        $_SESSION['username'] = $row['firstName'];
-                    }
-                     
-                    header('location: home.php'); 
-                } 
                 
             ?>
         </form>
