@@ -113,9 +113,13 @@
                 }
 
                 if ($_POST != array()) {
-                    $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
-                    VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$SSN')";
-                    $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
+                    $checkUserQuery = "SELECT * FROM tbluser WHERE email= '$email' AND password='$password'";
+                    $checkUserExists = mysqli_query($newConnection->connection,$checkUserQuery);
+                    if(mysqli_num_rows($checkUserExists) == 0) {
+                        $submitDataQuery = "INSERT INTO `tblUser` (email, password, firstName, lastName, address, phone, salary, SSN) 
+                        VALUES ('$email', '$password', '$firstName', '$lastName', '$address', '$phone', '$salary', '$SSN')";
+                        $newConnection->executeQuery($newConnection->connection,$submitDataQuery);
+                    } 
                 }
 
                 $loginQuery = "SELECT * FROM tbluser WHERE email= '$email' AND password='$password'"; 
