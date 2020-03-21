@@ -22,7 +22,7 @@
             if(isset($_SESSION['username'])) {
                 echo "<h1>Welcome to Your Profile, ".$_SESSION['username']."</h1>";
                 echo "<br>";
-                echo "<h2 id='margin-top'>Your profile information is:</h2>";
+                echo "<h2>Your profile information is:</h2>";
                 echo "<div class='row'>";
                     echo "<div class='col-md-6 text-left'>";
                         echo "<h3>Email: ".$_SESSION['email']."</h3>";
