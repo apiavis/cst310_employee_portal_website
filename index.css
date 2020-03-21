@@ -2,6 +2,10 @@ form.padding-top {
     padding-top: 24px;
 }
 
+#margin-top {
+    margin-top: 24px;
+}
+
 #no-padding-right {
     padding-right: 0px;
 }
