@@ -54,6 +54,14 @@
                     if (mysqli_num_rows($results) == 1) { 
                         while($row = mysqli_fetch_assoc($results)) {
                             $_SESSION['username'] = $row['firstName'];
+                            $_SESSION['email'] = $row['email'];
+                            $_SESSION['password'] = $row['password'];
+                            $_SESSION['firstName'] = $row['firstName'];
+                            $_SESSION['lastName'] = $row['lastName'];
+                            $_SESSION['address'] = $row['address'];
+                            $_SESSION['phone'] = $row['phone'];
+                            $_SESSION['salary'] = $row['salary'];
+                            $_SESSION['SSN'] = $row['SSN'];
                         }
                          
                         header('location: home.php'); 
